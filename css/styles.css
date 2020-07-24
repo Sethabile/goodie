@@ -124,7 +124,19 @@ img {
 
 .categories {
     background: #141518;
-    padding: 24px 0;
+    box-sizing: border-box;
+}
+
+.categories .container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    color: white;
+    padding: 16px;
 }
 
 .category-item {
