@@ -44,18 +44,18 @@ img {
 }
 
 .featured {
-    background: #EEE;
+    /* background: #EEE; */
 }
 .featured .container {
     display: flex;
     justify-content: space-around;
-    padding: 24px 0;
+    padding: 48px 0;
 }
 .featured div {
 }
 .featured img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    /* max-width: 1170px; */
     display: block;
 }
 
@@ -75,36 +75,20 @@ img {
     border: 1px solid #dadce0;
     border-radius: 8px;
 
-    color: rgba(0, 0, 0, 0.87);
     cursor: pointer;
     display: block;
-    font-size:  13px;
-    height: 238px;
-    line-height: 15px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
+    min-height: 238px;
+    margin: 0px;
     position: relative;
-    text-size-adjust: 100%;
-    white-space: nowrap;
     width: 152px;
 }
 
 .product-image {
     background-color:rgb(255, 255, 255);
     box-sizing:border-box;
-    color:rgba(0, 0, 0, 0.87);
-    cursor:pointer;
     display:inline-block;
-    font-size:13px;
     height:152px;
-    justify-content:center;
-    line-height:15px;
     position:relative;
-    text-align:center;
-    text-size-adjust:100%;
-    white-space:nowrap;
     width:152px;
 
     border-radius: 8px 8px 0 0;
@@ -113,15 +97,10 @@ img {
 
 .product-details {
     color:rgba(32, 33, 36, 0.8);
-    cursor:pointer;
     display:block;
     font-size:14px;
-    /* height:82px; */
     line-height:20px;
-    padding-bottom:8px;
-    padding-left:12px;
-    padding-right:12px;
-    padding-top:8px;
+    padding: 8px 12px;
     text-size-adjust:100%;
     white-space:nowrap;
     width:128px;
@@ -141,4 +120,29 @@ img {
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 16px;
+}
+
+.categories {
+    background: #141518;
+    padding: 24px 0;
+}
+
+.category-item {
+    padding: 6px 8px;
+    color: white;
+    text-decoration: none;
+}
+.category-item.active, .category-item:hover {
+    color: #fdb203;
+}
+
+.footer {
+    background: #141518;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
