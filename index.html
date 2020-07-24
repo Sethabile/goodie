@@ -56,16 +56,13 @@
         const buildElement = html => {
             const template = document.createElement('template')
             template.innerHTML = html
-            console.log('template', template.content)
             return template.content
         }
         // get products
         fetch('http://localhost:8080/goodie/api/').then(function(response) {
             return response.json()
         }).then(function(data) {
-            console.log(data)
             const productsContainer = document.querySelector('.products.container')
-            console.log('productsContainer', productsContainer)
             data.forEach(product => {
                 productsContainer.append(buildElement(`
                     <div class="product-container">

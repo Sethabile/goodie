@@ -139,6 +139,7 @@ img {
     padding: 6px 8px;
     color: white;
     text-decoration: none;
+    white-space: nowrap;
 }
 .category-item.active, .category-item:hover {
     color: #fdb203;
