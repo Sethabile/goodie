@@ -1,84 +1,77 @@
 <!DOCTYPE html>
-
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Goodie | Ecommerce Website Design</title>
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Goodie | Ecommerce Website Design</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-
-<body>
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="images/pngtree-shopping-bag-icon.jpg">
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <img src="images/pngtree-shopping-bag-icon.jpg">
+                </div>
+                <div class="navbar">
+                    <a href="#">Cart</a>
+                    <a href="#">Login</a>
+                    <a href="#">Sign up</a>
+                </div>
             </div>
-            <div class="navbar">
-                <a href="#">Cart</a>
-                <a href="#">Login</a>
-                <a href="#">Sign up</a>
+        </div>
+
+        <section class="categories">
+            <div class="container">
+                <span class="site-title">Goodie</span>
+                <a href="#" class="category-item">Sales & offers</a>
+                <a href="#" class="category-item">Handbags</a>
+                <a href="#" class="category-item">Backpacks</a>
+                <a href="#" class="category-item">Clutch bags</a>
+                <a href="#" class="category-item">Holdalls and weekend bags</a>
+                <a href="#" class="category-item">Laptop bags</a>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <section class="categories">
-        <div class="container">
-            <span class="site-title">Goodie</span>
-            <a href="#" class="category-item">Sales & offers</a>
-            <a href="#" class="category-item">Brands</a>
-            <a href="#" class="category-item">Backpacks</a>
-            <a href="#" class="category-item">Clutch bags</a>
-            <a href="#" class="category-item">Holdalls and weekend bags</a>
-            <a href="#" class="category-item">Laptop bags</a>
-            <a href="#" class="category-item">Shoulder bags</a>
-        </div>
-    </section>
+        <section class="featured"><img src="images/banner.jpg"></section>
 
-    <section class="featured">
-        <img src="images/banner.jpg">
-    </section>
-
-    <div class="catalogue">
-        <div class="section-header container">
-            Popular products
+        <div class="catalogue">
+            <div class="section-header container">
+                Popular products
+            </div>
+            <div class="products container"></div>
         </div>
-        <div class="products container">
+
+        <div class="footer">GOODIE &copy;. Built with ❤️</div>
+
+        <script>
+            function buildElement (html) {
+                const template = document.createElement('template')
+                template.innerHTML = html
+                return template.content
+            }
             
-        </div>
-    </div>
-
-    <div class="footer">
-        GOODIE &copy;. Built with ❤️
-    </div>
-
-    <script>
-        const buildElement = html => {
-            const template = document.createElement('template')
-            template.innerHTML = html
-            return template.content
-        }
-        // get products
-        fetch('http://localhost:8080/goodie/api/').then(function(response) {
-            return response.json()
-        }).then(function(data) {
-            const productsContainer = document.querySelector('.products.container')
-            data.forEach(product => {
-                productsContainer.append(buildElement(`
-                    <div class="product-container">
-                        <div class="product-item">
-                            <div class="product-image"><img src="images/products/${product.image}" /></div>
-                            <div class="product-details">
-                                ${product.name}
+            // get products
+            fetch('http://localhost:8080/goodie/api/').then(function(response) {
+                return response.json()
+            }).then(function(data) {
+                const productsContainer = document.querySelector('.products.container')
+                data.forEach(function(product) {
+                    const productElement = buildElement(`
+                        <div class="product-container">
+                            <div class="product-item">
+                                <div class="product-image"><img src="images/products/${product.image}" /></div>
+                                <div class="product-details">
+                                    ${product.name}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `))
+                    `)
+                    productsContainer.append(productElement)
+                })
+            }).catch(function() {
+                // there is an error. do something about it
+                console.log('There was an error while attempting to fetch products. Do something about it')
             })
-        }).catch(function() {
-            // there is an error. do something about it
-        });
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
