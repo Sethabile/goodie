@@ -12,6 +12,12 @@ html, body {
     margin: auto;
 }
 
+.site-title {
+    font-size: 24px;
+    color: white;
+    padding: 16px;
+}
+
 .header {
     border-bottom: 1px solid #CCC;
 }
@@ -25,7 +31,8 @@ html, body {
 }
 
 .logo {
-    width: 60px;
+    width: 48px;
+    padding: 6px;
 }
 
 img {
@@ -41,21 +48,17 @@ img {
     text-decoration: none;
     color: black;
     padding: 8px;
+    font-size: 14px;
 }
 
-.featured {
-    /* background: #EEE; */
-}
 .featured .container {
     display: flex;
     justify-content: space-around;
     padding: 48px 0;
 }
-.featured div {
-}
+
 .featured img {
     width: 100%;
-    /* max-width: 1170px; */
     display: block;
 }
 
@@ -101,9 +104,8 @@ img {
     font-size:14px;
     line-height:20px;
     padding: 8px 12px;
-    text-size-adjust:100%;
-    white-space:nowrap;
-    width:128px;
+    text-size-adjust: 100%;
+    width: 128px;
 }
 
 .product-price {
@@ -131,12 +133,6 @@ img {
     height: 80px;
     display: flex;
     align-items: center;
-}
-
-.title {
-    font-size: 24px;
-    color: white;
-    padding: 16px;
 }
 
 .category-item {
