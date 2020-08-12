@@ -46,7 +46,10 @@
         <script>
             fetch('/goodie/api/products.php')
             .then(res=>res.json())
-            .then(updateProducts)
+            .then(products => {
+                let filtered = products.filter(product => product.categories.includes((new URLSearchParams(window.location.search)).get('category') ?? ''))
+                return filtered.length ? updateProducts(filtered) : Promise.reject()
+            })
             .catch(() => showMessage('No results found'))
         </script>
     </body>
