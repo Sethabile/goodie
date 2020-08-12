@@ -19,6 +19,8 @@ function addToCart (id) {
         },
         body: JSON.stringify({product_id: id})
     })
+    .then(res=>res.json())
+    .then(products => alert(`Added ${products[products.length - 1].name} to your cart`))
     .catch(() => showMessage('No results found'))
 }
 
@@ -32,7 +34,7 @@ function removeFromCart (id) {
             body: JSON.stringify({id})
         })
     .then(res=>res.json())
-    .then(products => (clearProducts(), updateCart(products)))
+    .then(products => (clearProducts(), alert('Item removed from your cart'), updateCart(products)))
     .catch(() => showMessage('No results found'))
 }
 
