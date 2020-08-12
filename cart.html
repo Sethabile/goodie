@@ -14,10 +14,10 @@
                     <img src="images/pngtree-shopping-bag-icon.jpg">
                 </a>
                 <div class="navbar">
-                    <a href="/goodie/" class="active">Home</a>
+                    <a href="/goodie/">Home</a>
                     <a href="/goodie/about.html">About us</a>
                     <a href="/goodie/products.html">Products</a>
-                    <a href="/goodie/cart.html">Cart <i class="fa fa-shopping-bag"></i></a>
+                    <a href="/goodie/cart.html" class="active">Cart <i class="fa fa-shopping-bag"></i></a>
                 </div>
             </div>
         </div>
@@ -34,11 +34,9 @@
             </div>
         </section>
 
-        <section class="featured"><img src="images/banner.jpg"></section>
-
         <div class="catalogue">
             <div class="section-header container">
-                Popular products
+                Cart items
             </div>
             <div class="products container"></div>
         </div>
@@ -46,9 +44,9 @@
         <div class="footer">GOODIE &copy;. Built with ❤️</div>
         <script type="text/javascript" src="js/product_template.js"></script>
         <script>
-            fetch('/goodie/api/products.php')
+            fetch('/goodie/api/cart.php')
             .then(res=>res.json())
-            .then(updateProducts)
+            .then(updateCart)
             .catch(() => showMessage('No results found'))
         </script>
     </body>

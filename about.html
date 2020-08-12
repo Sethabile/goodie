@@ -14,8 +14,8 @@
                     <img src="images/pngtree-shopping-bag-icon.jpg">
                 </a>
                 <div class="navbar">
-                    <a href="/goodie/" class="active">Home</a>
-                    <a href="/goodie/about.html">About us</a>
+                    <a href="/goodie/">Home</a>
+                    <a href="/goodie/about.html" class="active">About us</a>
                     <a href="/goodie/products.html">Products</a>
                     <a href="/goodie/cart.html">Cart <i class="fa fa-shopping-bag"></i></a>
                 </div>
@@ -34,22 +34,18 @@
             </div>
         </section>
 
-        <section class="featured"><img src="images/banner.jpg"></section>
-
-        <div class="catalogue">
-            <div class="section-header container">
-                Popular products
-            </div>
-            <div class="products container"></div>
+        <div class = "picture">
+            <img src = "./images/_GVB4279.jpg">
         </div>
 
+        <div class= "paragraph">
+            <p>
+                Hi, there. We are sisters who were obssessed with bags from a younng age. We shared our struggles<br> 
+                of buying good quality bags at affordable prices. Which is why we started Goodie in 2018.<br> 
+                Goodie is a purely South African company which produces quality and luxurious. Our bags are<br> 
+                produced with local materials by locals
+            </p>
+        </div>
         <div class="footer">GOODIE &copy;. Built with ❤️</div>
-        <script type="text/javascript" src="js/product_template.js"></script>
-        <script>
-            fetch('/goodie/api/products.php')
-            .then(res=>res.json())
-            .then(updateProducts)
-            .catch(() => showMessage('No results found'))
-        </script>
     </body>
 </html>
