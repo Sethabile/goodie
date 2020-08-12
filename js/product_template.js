@@ -56,24 +56,50 @@ function updateProducts (products) {
     })
 }
 
-function updateCart (products) {
-    let total = 0
+function cartRows (products) {
+    let rows = ''
+
     products.forEach(function(product) {
-        total += Number(product.price)
-        productsContainer.append(buildElement(`
-            <div class="product-container">
-                <div class="product-item">
-                    <div class="product-image"><img src="images/products/${product.image}" /></div>
-                    <div class="product-details">
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-price">R${product.price}</div>
-                        <button onclick="removeFromCart(${product.id})">Remove from cart</button>
+        rows += `<tr>
+            <td>
+                <div class="product-container">
+                    <div class="product-item">
+                        <div class="product-image"><img src="images/products/${product.image}" /></div>
+                        <div class="product-details">
+                            <div class="product-name">${product.name}</div>
+                            <button onclick="removeFromCart(${product.id})">Remove from cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `))
+            </td>
+            <td>
+                <div class="product-price">R${product.price}</div>
+            </td>
+        </tr>`
     })
-    return total
+    return rows
+}
+
+function updateCart (products) {
+    const table = buildElement(`
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${cartRows(products)}
+                <tr>
+                    <td colspan="2">
+                        total: R${products.reduce((acc, curr) => acc += Number(curr.price), 0)}
+                    <td>
+                </tr>
+            </tbody>
+        </table>
+    `)
+    productsContainer.append(table)
 }
 
 function showMessage (message) {

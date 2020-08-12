@@ -51,7 +51,6 @@
             fetch('/goodie/api/cart.php')
             .then(res=>res.json())
             .then(updateCart)
-            .then(total => document.querySelector('.total .amount').innerHTML = 'R'+total)
             .catch(() => showMessage('No results found'))
         </script>
     </body>
