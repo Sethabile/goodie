@@ -16,6 +16,11 @@ html, body {
     font-size: 24px;
     color: white;
     padding: 16px;
+    text-decoration: none;
+}
+
+.site-title:hover {
+    color: #fdb203;
 }
 
 .header {
@@ -46,9 +51,19 @@ img {
 
 .navbar a {
     text-decoration: none;
-    color: black;
+    color: #888;
+    font-weight: bold;
     padding: 8px;
     font-size: 14px;
+    display: inline-block;
+}
+.navbar a:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+.navbar a.active {
+    color: #fdb203;
 }
 
 .featured .container {
@@ -70,7 +85,9 @@ img {
     padding: 12px 5.5px;
     display: inline-block;
 }
-
+.product-container:hover {
+    transform: scale(1.05);
+}
 .product-item {
     overflow: hidden;
     margin: 12px;
@@ -144,6 +161,26 @@ img {
 .category-item.active, .category-item:hover {
     color: #fdb203;
 }
+
+.picture {
+    margin-top: 20px;
+    
+}
+
+.picture img {    
+    display: block;
+    margin: auto;
+    width: 400px;
+}
+
+
+.paragraph {
+    color: #202124;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
 
 .footer {
     background: #141518;
