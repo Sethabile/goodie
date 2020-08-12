@@ -39,6 +39,10 @@
                 Cart items
             </div>
             <div class="products container"></div>
+            <div class="total container">
+                <div class="label">Total</div>
+                <div class="amount"></div>
+            </div>
         </div>
 
         <div class="footer">GOODIE &copy;. Built with ❤️</div>
@@ -47,6 +51,9 @@
             fetch('/goodie/api/cart.php')
             .then(res=>res.json())
             .then(updateCart)
+            .then(total => {
+                document.querySelector('.total .amount').innerHTML = 'R'+total
+            })
             .catch(() => showMessage('No results found'))
         </script>
     </body>

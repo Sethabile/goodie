@@ -192,3 +192,8 @@ img {
     align-items: center;
     justify-content: center;
 }
+
+.total {
+    padding: 16px;
+    font-weight: bold;
+}

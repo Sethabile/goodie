@@ -54,7 +54,9 @@ function updateProducts (products) {
 }
 
 function updateCart (products) {
+    let total = 0
     products.forEach(function(product) {
+        total += Number(product.price)
         productsContainer.append(buildElement(`
             <div class="product-container">
                 <div class="product-item">
@@ -68,6 +70,7 @@ function updateCart (products) {
             </div>
         `))
     })
+    return total
 }
 
 function showMessage (message) {
