@@ -35,6 +35,7 @@ function removeFromCart (id) {
         })
     .then(res=>res.json())
     .then(products => (clearProducts(), alert('Item removed from your cart'), updateCart(products)))
+    .then(total => document.querySelector('.total .amount').innerHTML = 'R'+total)
     .catch(() => showMessage('No results found'))
 }
 
