@@ -1,6 +1,6 @@
 # Goodie
 
-> Goodie is an ecommerce website the sells luxury bags.
+> Goodie is an ecommerce website that sells luxury bags.
 
 ## Installation
 
